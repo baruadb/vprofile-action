@@ -1,7 +1,7 @@
 name: vprofile actions
 on: workflow_dispatch
 env:
-  AWS_REGION: us-east-1
+  AWS_REGION: us-east-2
   ECR_REPOSITORY: vprofileapp
   EKS_CLUSTER: vprofile-eks
 
@@ -107,4 +107,4 @@ jobs:
           chart-path: helm/vprofilecharts
           namespace: default
           values: appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }},apptag=${{ github.run_number }}
-          name: vprofile-stack    
+          name: vprofile-stack       
